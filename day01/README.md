@@ -199,6 +199,7 @@ var bb=new Array("David","Susan","Lucy","Jack");
 ### 5.5 对象
 
 用花括号括起，然后用键值对的形式赋值
+name:value 的形式
 
 ```javascript
 var person={
@@ -207,6 +208,16 @@ var person={
     age:21
 }
 //对象的打印.html
+//深入对象，增加对象的方法
+//在上面的定义中 增加一个控制台问候的方法
+var person={
+    name:'David',
+    sex:'男',
+    age:21,
+    greeting:function(){
+        console.log("hello",person.name,"!");
+    }
+}
 ```
 
 ### 5.6 undefined 和null
@@ -219,3 +230,21 @@ aa=11;  //赋值11
 ...
 aa=null;  //根据实际的需要需要清空，为null
 ```
+
+## 6.js函数
+
+javascript函数的格式是 
+function functionName([args]){
+
+}
+function是关键字
+functionName是函数名 后面是括号,括号里是一系列的参数，其后紧跟花括号{}.
+
+就如之前测试用例的，我的每一个测试用例都是按钮点击事件，每次点击按钮后都会触发按钮事件，事件就会调用已经定义的函数。
+
+几种不同的函数都在 函数.html可测试。
+
+==变量的生存周期==
+变量分为局部变量和全局变量。
+局部变量指的是函数里定义的变量，只能是函数内部使用，外部无法使用，且函数运行时被创建，函数运行后被销毁。
+全局变量在script全局的变量，在页面创建时创建，随着页面的销毁而销毁。

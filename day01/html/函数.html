@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>函数的测试</title>
+    </head>
+    <body>
+        <button onclick="test1()">点击弹出警告信息</button>
+        <br> <button onclick="test2(3,4)">点击计算两个数3和4的乘积,在控制台打印</button>
+        <br> <button onclick="test3(3,4)">点击控制台，查看打印的结果</button>
+    </body>
+    <script>
+        function test1() {
+            //普通的，不带参数的不带返回值的函数
+            window.alert("这是一个简单的函数");
+          }
+          function test2(a,b){
+              //带有参数的函数
+              window.alert("将计算3和4的乘积");
+              var c=a*b;
+              console.log(c);
+          }
+          function test3(a,b){
+              //在另一个函数里完成乘法运算。
+              var c=chengji(a,b);
+              console.log("3和4的乘积是",c)
+          }
+          function chengji(a,b) { 
+              return a*b;
+           }
+    </script>
+</html>

@@ -7,6 +7,7 @@
 
 <body>
     <button onclick="test1()">点击打印对象</button>
+    <br> <button onclick="test2()">点击将在控制台打印问候信息</button>
 </body>
 <script>
     function test1() {
@@ -16,9 +17,22 @@
             age: 21
         };
         console.log("打印对象");
-        console.log("name=",person.name);
-        console.log("sex=",person["sex"]);
-        console.log("age=",person["age"]);
+        console.log("name=", person.name);
+        console.log("sex=", person["sex"]);
+        console.log("age=", person["age"]);
+    }
+
+    function test2() {
+        var person = {
+            name: 'David',
+            sex: '男',
+            age: 21,
+            greeting: function () {
+                console.log("hello", person.name, "!");
+            }
+        }
+        //使用对象的方法
+        person.greeting();
     }
 </script>
 
