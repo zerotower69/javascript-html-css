@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>数组的测试与打印</title>
+</head>
+
+<body>
+    <button onclick="test1()">点击查看控制台打印索引赋值结果</button>
+    <br> <button onclick="test2()">点击查看控制台直接赋值的结果</button>
+</body>
+<script>
+    function test1() {
+        var aa = new Array();
+        aa[0] = "David";
+        aa[1] = "Susan";
+        aa[2] = "Lucy";
+        aa[3] = "Jack";
+        var i = 0,
+            j = 0; //同一行赋值
+        for (i = 0; i < aa.length; i++) {
+            //在控制台打印
+            console.log(aa[i]);
+        }
+    }
+    function test2() { 
+        var bb=new Array("David","Susan","Lucy","Jack");
+        var i=0;
+        console.log("打印直接赋值的结果")
+        for(i=0;i<bb.length;i++){
+            console.log(bb[i]);
+        }
+     }
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>对象的打印</title>
+</head>
+
+<body>
+    <button onclick="test1()">点击打印对象</button>
+</body>
+<script>
+    function test1() {
+        var person = {
+            name: 'David',
+            sex: '男',
+            age: 21
+        };
+        console.log("打印对象");
+        console.log("name=",person.name);
+        console.log("sex=",person["sex"]);
+        console.log("age=",person["age"]);
+    }
+</script>
+
+</html>

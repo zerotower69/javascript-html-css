@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>测试js的输出</title>
+    <!-- 尝试在head中引入一次 -->
+    <script>
+        function test1() {
+            //点击按钮
+            window.alert("this is the test alert information");
+        }
+
+        function test2() {
+            document.getElementById('demo').innerText = '这是改变后的内容'
+        }
+        function test3(){
+            document.write("这些内容将在按钮点击后覆盖所有")
+        }
+        function test4() {
+            console.log("我是测试")
+          }
+    </script>
+  <script>document.write("这些内容将在一开始就被加载,而且是首先加载,因为是写在了head标签中<br>")</script>
+</head>
+
+<body>
+    <button onclick="test1()">点击此按钮将出现弹窗警告</button> <br>
+    <p style="color:red" id="demo">这是未改变红色字体的内容</p> <button onclick="test2()">点击改变红色字体的内容</button>
+    <br> <button onclick="test3()">点击后所有的内容都会被覆盖</button>
+    <br> <button onclick="test4()">点击按钮后控制台会打印“我是测试”</button>
+</body>
+<script>document.write("<br>这些内容将在上述内容结束后加载，因为写在了body标签之后")</script>
+</html>
