@@ -262,5 +262,62 @@ for(var i=0,var sum=0;i<=20;i++){
 }  //对0--20内偶数求和,continue的作用是，数字是奇数跳过
 
 ///###############################//#endregion
+for(var i=1;;){
+    console.log('hello');
+    if(i==12) break;
+    i++;
+}//执行12次后的输出退出循环
+```
 
+## 7.js的typeof、null和undefined
+
+1.typeof检查变量的类型
+
+```javascript
+typeof "Hello, world!";  //String
+typeof 12.34;    //Number
+typeof true //boolean
+typeof ["David","Susan","Lucy","Jack"];  //Object
+typeof {name:"David",age:21,sex:"男"} //Object
+```
+
+在js中，null代表为空，是一个对象，只不过什么都没有，经常是在释放变量的时候使用。
+而undefined代表值和类型都是undefined，表示变量声明了但是从来没有赋值。
+
+```javascript
+null==undefined //true  值相同
+null === undefined //false 类型不同
+```
+
+## 8.js的数据类型转换
+
+### 8.1 js的数据类型
+
+6种基本类型： number\string\boolean\function\object\symbol
+
+3种对象类型：Object\Array\Date
+
+2种不含任何值得数据类型：null\undefined
+
+### 8.2 js的constructor构造器
+
+constructor构造器将返回所有js变量的构造函数
+
+```javascript
+"John".constructor //String()
+(12.34).constructor  //Number()
+false.constructor  //Boolean()
+[1,2,3,4].constructor  //Array()
+{name:'David',age:21}.constructor //Object()
+new Date().constructor  //Date()
+function() {}.constructor  //Function()  
+```
+
+### 8.3 数字转换为字符串
+
+```javascript
+var aa=12.34
+String(aa);
+String(34);
+(12.34).toString()
 ```
