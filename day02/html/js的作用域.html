@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>js的作用域</title>
+</head>
+
+<body>
+    <p>测试js的局部作用域,下面输出</p>
+    <button onclick="test1()">点击我查看函数test定义的cart的类型</button>
+    <p id="test11">将在这里显示</p>
+    <p>测试js的全局作用域，下面输出</p>
+    <button onclick="test2()">点击查看aa的值和类型</button>
+    <p id="demo"></p>
+</body>
+<script>
+    function test1() {
+        document.getElementById('test11').innerText = typeof (cart);
+    }
+
+    function test() {
+        var cart = 12;
+    }
+    //全局定义
+    var aa = 12;
+    document.getElementById('demo').innerHTML = "aa原来的值:" + aa + "  aa的类型" + typeof aa;
+
+    function test2() {
+        aa = "hello, world!";
+        document.getElementById('demo').innerHTML = "aa现在的值:" + aa + "  aa的类型" + typeof aa;
+    }
+</script>
+
+</html>

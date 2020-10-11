@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>js的字符串</title>
+</head>
+
+<body>
+    <button onclick="test1()">点击查看"hello,world!"的第一个字符</button> <br>
+    <span>hello,world!的第一个字符：<p id="firstCh"></p></span> <br>
+    <button onclick="test2()">点击查看字符串的长度</button>
+    <span>"hello, world!"的长度:<p id="length"></p></span>
+</body>
+<script>
+    function test1()
+    {
+        var aa="hello,world!";
+        document.getElementById('firstCh').innerHTML=aa[0];
+    }
+    function test2(){
+        var aa="hello, world!";
+        var lengthOfaa=aa.length;
+        document.getElementById('length').innerHTML=lengthOfaa;
+    }
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>拼接字符串</title>
+</head>
+
+<body>
+    <p>拼接字符串 "hello, "和"world!"</p>
+    <button onclick="test1()">点击查看结果</button>
+    <p>拼接的结果：</p> <p id='demo'></p>
+</body>
+<script>
+    function test1() {
+        var a1 = "hello, ";
+        var a2 = "world!";
+        var a3 = a1 + a2; //a3="hello, world!";
+        document.getElementById('demo').innerHTML=a3;
+    }
+</script>
+
+</html>
