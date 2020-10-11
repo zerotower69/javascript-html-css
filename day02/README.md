@@ -321,3 +321,46 @@ String(aa);
 String(34);
 (12.34).toString()
 ```
+
+### 8.4 布尔值转字符串
+
+```javascript
+false.toString()
+true.toString()
+String(true);
+String(false);
+```
+
+### 8.5 将日期转为字符串
+
+```javascript
+String(new Date());
+var obj=new Date();
+obj.toString();
+```
+
+### 8.6 字符串转为数字
+
+```javascript
+Number("3.14");  //3.14
+Number(" "); //0
+Number("");  //0
+Number("11 22") //Nan Nan也是一个对象
+```
+
+### 8.7 布尔转数字
+
+```javascript
+Number(false); //返回0
+Number(true); //返回1
+```
+
+### 8.8 将日期转为数字
+
+```javascript
+d=new Date();
+Number(d);
+///////////
+c=new Date();
+d=c.getTime();
+```
