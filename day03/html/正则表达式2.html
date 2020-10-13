@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>正则表达式基础2有关test</title>
+    </head>
+    <body>
+        <p style="color: green;">测试输入的字符串中是否包含了字符z</p>
+        <span>请输入：<input type="text" id="t1"> <button onclick="test1()">点击查看结果</button></span> <br>
+        <span>结果是：<span style="color: red;" id="r1"></span></span>
+
+        <p style="color: green;">测试输入的字符串中是否包含了数字0-9</p>
+        <span>请输入：<input type="text" id="t2"> <button onclick="test2()">点击查看结果</button></span> <br>
+        <span>结果是：<span style="color: red;" id="r2"></span></span>
+
+        <p style="color: green;">测试输入的字符串中是否包含了字符ajd中的某一个或者多个</p>
+        <span>请输入：<input type="text" id="t3"> <button onclick="test3()">点击查看结果</button></span> <br>
+        <span>结果是：<span style="color: red;" id="r3"></span></span>
+
+        <p style="color: green;">测试输入的字符串是否为11位长度的数字</p>
+        <span>请输入：<input type="text" id="t4"> <button onclick="test4()">点击查看结果</button></span> <br>
+        <span>结果是：<span style="color: red;" id="r4"></span></span>
+
+        <p style="color: green;">测试输入的字符串是否为1171或者1161开头的10位数字串</p>
+        <span>请输入：<input type="text" id="t5"> <button onclick="test5()">点击查看结果</button></span> <br>
+        <span>结果是：<span style="color: red;" id="r5"></span></span>
+
+        <p style="color: green;">测试输入的字符串中是否包含中文字符</p>
+        <span>请输入：<input type="text" id="t6"> <button onclick="test6()">点击查看结果</button></span> <br>
+        <span>结果是：<span style="color: red;" id="r6"></span></span>
+
+    </body>
+    <script>
+        function test1(){
+            var reg=/z/;
+            var str=document.getElementById('t1').value;
+            var re=reg.test(str);
+            document.getElementById('r1').innerHTML=re;
+        }
+        function test2(){
+            var reg=/\d/;
+            var str=document.getElementById('t2').value;
+            var re=reg.test(str);
+            document.getElementById('r2').innerHTML=re;
+        }
+        function test3(){
+            var reg=/[ajd]/;
+            var str=document.getElementById('t3').value;
+            var re=reg.test(str);
+            document.getElementById('r3').innerHTML=re;
+        }
+        function test4(){
+            var reg=/\d{11}/;
+            var str=document.getElementById('t4').value;
+            var re=reg.test(str);
+            document.getElementById('r4').innerHTML=re;
+        }
+
+        function test5(){
+            var reg=/(^1161[0-9]{6}$)|^(1171[0-9]{6}$)/;
+            var str=document.getElementById('t5').value;
+            var re=reg.test(str);
+            document.getElementById('r5').innerHTML=re;
+        }
+        
+        function test6(){
+            var reg=/[\u4E00-\u9FEF]/;
+            var str=document.getElementById('t6').value;
+            var re=reg.test(str);
+            document.getElementById('r6').innerHTML=re;
+        }
+    </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>正则表达式基础1</title>
+</head>
+
+<body>
+    <p style="color: green;">直接在search方法中使用正则表达式(大小写不敏感)</p>
+    <span> 请输入包含"hello"的内容: <input id="t1" type="text"></span>
+    <button onclick="test1()">点击获取结果</button> <br>
+    <span>在这里将显示你输入的内容中hello的起始位置(-1表示无结果)：<span id="r1" style="color: red;"></span></span>
+    <p style="color:green;">在search方法中使用字符串(大小写敏感)</p>
+    <span>请输入包含“China"的内容：<input type="text" id="t2"></span>
+    <button onclick="test2()">点击查看结果</button> <br>
+    <span>实在这里显示上面的结果(-1表示无结果)：<span style="color: red;" id="r2"></span></span>
+    <p style="color: green;">使用replace进行替换,正则表达式模式且大小写不敏感</p>
+    <span>请输入替换后的内容：<input type="text" id="t3"></span>
+    <button onclick="test3()">点击查看结果：</button> <br>
+    <span>你获取的结果：Hello,<span style="color: red;" id="r3">David</span></span>
+</body>
+<script>
+    function test1() {
+        var str = document.getElementById('t1').value;
+        //console.log(str);   //打印到控制台
+        var n = str.search(/hello/i);
+        document.getElementById('r1').innerHTML = n;
+    }
+
+    function test2() {
+        var str = document.getElementById('t2').value;
+        var n = str.search("China");
+        document.getElementById('r2').innerHTML = n;
+    }
+
+    function test3() {
+        var re = document.getElementById('t3').value;
+        //console.log(re)
+        var str = document.getElementById('r3').innerHTML;
+        var text = str.replace(/David/i, re);
+        document.getElementById('r3').innerHTML = text;
+        setTimeout(function () {
+            window.location.reload();
+        }, 3000);
+    }
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>正则表达式基础 match匹配</title>
+</head>
+
+<body>
+    <p style="color: green;">匹配输入字符串中所有包含字母e的单词</p>
+    <span>请输入：<input type="text" id="t1"> <button onclick="test1()">点击查看结果</button></span> <br>
+    <span>结果是：<span style="color: red;" id="r1"></span></span>
+</body>
+<script>
+   function test1(){
+            var reg= new RegExp(/e/);
+            var str=document.getElementById('t1').value;
+            var re=reg.exec(/e/);
+            document.getElementById('r1').innerText=re;
+        }
+</script>
+
+</html>
