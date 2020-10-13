@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>变量提升和严格模式</title>
+</head>
+
+<body>
+    <p>测试变量提升</p>
+    </p>
+    <p id="demo"></p>
+
+    <p>测试严格模式</p>
+    <p id="strict"></p>
+</body>
+<script>
+    //"use strict"
+    a = 3;
+    elem = document.getElementById('demo');
+    elem.innerHTML = a;
+    var a; //使用了变量提升
+</script>
+<script>
+    "use strict" //严格模式下不可以使用变量提升
+    b = 10;
+    elem.getElementById('strict');
+    elem.innerHTML = b;
+    var b;
+    /*变量提升和严格模式.html:13 Uncaught ReferenceError: elem is not defined
+    at 变量提升和严格模式.html:13*/
+</script>
+
+</html>
