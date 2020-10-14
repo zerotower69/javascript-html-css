@@ -9,10 +9,6 @@
 javascript的引入可以是在head、body或者js文件单独的方式，引入的次数不限，但随着代码量的增多，从js外部文件的引入的选择更好。
 举例：
 
-```js
-
-```
-
 ## 2.js的输出
 
 >js的输出.html
@@ -67,68 +63,68 @@ const bb=123;  //定义后不可以修改
 
 ### 3.5 关键字
 
-```javascript
-//javascript的关键字有：
-abstract
-if  else
-instanceof
-super
-boolean
-enum
-int
-byte
-long
-char
-float
-short
-double
-while
-null
-var
-const
-switch
-for
-continue
-break
-export
-interface
-synchronized
-extends
-let
-this
-case
-true
-false
-throw
-throws
-try
-catch
-final
-finally
-native
-new
-transient
-class
-package
-function
-private
-typeof
-debugger
-goto
-protected
-default
-public
-void
-delete
-implements
-return
-volatile
-do
-import
-in
-static
-with
-```
+| 关键字 | 解释 | 示例 | 关联 |
+| :-----: | :---- | :---- | :----|
+| abstract |
+|if|
+|else|
+|instanceof|
+|super|
+|boolean|
+|enum|
+|int|
+|byte|
+|long|
+|char|
+|float|
+|short|
+|double|
+|while|
+|null|
+|var|
+|const|
+|switch|
+|continue|
+|break|
+|for|
+|export|
+|interface|
+|synchronized|
+|extends|
+|let|
+|this|
+|case|
+|true|
+|false|
+|throw|
+|throws|
+|try|
+|catch|
+|final|
+|finally|
+|native|
+|new|
+|transient|
+|class|
+|package|
+|function|
+|private|
+|typeof|
+|debugger|
+|goto|
+|protected|
+|default|
+|public|
+|void|
+|delete|
+|implements|
+|return|
+|volatile|
+|do|
+|import|
+|in|
+|static|
+|with|
 
 ### 3.6js的字符集
 

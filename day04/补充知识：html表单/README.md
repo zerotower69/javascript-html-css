@@ -12,8 +12,7 @@ html 表单主要是用来收集用户的输入信息，并发送到服务端。
 
 ## 2.简单的表单展示
 
-请参考测试用例的html表单.html中的示例。
-
+请参考测试用例的 `html表单.html`中的示例。
 
 ## 3.input标签的type属性
 
@@ -24,10 +23,4 @@ type属性|解释
 |radio|单选按钮|
 |checkbox|复选框|
 |submit|提交按钮|
-
-
-```mermaid
-graph TD
-A-->B
-```
 
