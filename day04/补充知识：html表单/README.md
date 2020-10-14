@@ -16,3 +16,15 @@ html 表单主要是用来收集用户的输入信息，并发送到服务端。
 
 ## 3.input标签的type属性
 
+常用的type属性有：
+1.text    #文本
+2.password  #密码
+3.radio   # 单选按钮
+4.checkbox  #复选框
+5.submit  #提交按钮
+
+```mermaid
+graph TD
+A-->B
+```
+

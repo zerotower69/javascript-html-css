@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>type属性</title>
+</head>
+
+<body>
+    <h1>测试各种type属性</h1>
+    <form action="">
+        <h2>文本属性</h2>
+        <span> 文本 <input type="text"></span>
+        <h2>密码属性</h2>
+        <span>密码 <input type="password"></span>
+        <h2>单选框属性</h2>
+        <input type="radio" name="age" value="infant" checked="checked">0~6 <br>
+        <input type="radio" name="age" value="children"> 7~12 <br>
+        <input type="radio" name="age" value="teenager">13~17 <br>
+        <input type="radio" name="age" value="adult"> 18~ <br>
+        <p><b>注意:</b>同一类型的单选框name属性的值必须一样，你可以更改其中一个或者多个name属性的值，看看会发生什么.
+        此外,加入checked="checked"可以默认选中</p>
+        <h2>复选框属性</h2>
+        <input type="checkbox" name="vehicle" value="bike"> Bike <br>
+        <input type="checkbox" name="vehicle" value="car"> Car <br>
+        <input type="checkbox" name="vehicle" value="truck" checked="checked"> Truck <br>
+        <input type="checkbox" name="vehicle" value="train"> Train <br>
+        <p><b>注意：</b>同样的，这里的name属性必须保持一致。
+            同样地,加入checked="checked"可以默认选中</p>
+        <h2>下拉列表属性</h2>
+        <select name="vehicle">
+            <option value="bike">Bike</option>
+            <option value="car">Car</option>
+            <option value="truck">Truck</option>
+            <option value="train">Train</option>
+        </select>
+        <p><b>注意:</b>下拉列表在页面初始化后默认选中的是第一个选项，如果你需要设置其他选项为默认选中，你需要加入selected</p>
+        <select name="vehicle">
+            <option value="bike">Bike</option>
+            <option value="car" selected>Car</option>
+            <option value="truck">Truck</option>
+            <option value="train">Train</option>
+        </select>
+        <h2>创建按钮</h2>
+        <input type="button" value="我是按钮">
+        <h2>重置按钮属性</h2>
+        <p>你可以通过重置按钮来重置表单内所有输入选择项中的默认值</p>
+        <input type="reset" value="重置所有">
+        <h2>提交按钮属性</h2>
+        <input type="submit" name="" value="提交"> 
+        <p>上述的所有键入内容都将会传入到另一个文件</p>
+    </form>
+</body>
+<script>
+
+</script>
+
+</html>
