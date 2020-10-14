@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>综合表单验证</title>
+    <script type="text/javascript">
+    function validate() { 
+        var username=document.forms["demo1"]["username"].value;
+        if(username=null||username==""){
+             alert("用户名不能为空");
+             return false;
+        }
+        else{
+            return true;
+        }
+     }
+    </script> <!--如有需要，这里引入Javascript的内容 -->
+    <style></style>  <!-- 如有需要，在这里配置样式表 -->
+  </head>
+  <body>
+      <form action="" name="demo1" onsubmit="return validate()">
+        <input type="text" name="username" placeholder="请输入用户名"> <br>
+        <input type="submit" value="提交">
+    </form>
+  </body>
+</html>

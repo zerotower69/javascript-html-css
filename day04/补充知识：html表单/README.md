@@ -12,7 +12,7 @@ html 表单主要是用来收集用户的输入信息，并发送到服务端。
 
 ## 2.简单的表单展示
 
-请参考测试用例的 `html表单.html`中的示例。
+请参考`测试用例`的 `html表单.html`中的示例。
 
 ## 3.input标签的type属性
 
@@ -23,4 +23,27 @@ type属性|解释
 |radio|单选按钮|
 |checkbox|复选框|
 |submit|提交按钮|
+
+具体的使用参考 `测试用例`的`type属性.html`。
+
+## 4.一些使用的表单示例
+
+在`测试用例`的`表单示例.html`中，你会看到：
+1.带有边框的表单
+2.模拟登录场景下的表单
+
+## 5.form标签的属性
+
+|form属性|解释|值|示例|
+|:----:|:----:|:----:|:----|
+|action|当提交数据时向何处传递数据|URL|\<form action="./submit.html">|
+|accept|规定服务器接收的文件类型|MIME_type|
+|accept-charset|规定表单处理表单数据的可用字符集|character_set|
+|autocomplete|是否开启表单的自动完成功能|on<br> off|
+|enctype|规定在向服务器发送表单数据之前如何对其进行编码。（适用于 method="post" 的情况）|application/x-www-form-urlencoded <br>  multipart/form-data  <br> text/plain||
+|method|规定用于发送表单数据的 HTTP 方法|get<br>post||
+|name|规定表单的名称|text||
+|novalidate|提交表单时不进行验证|novalidate||
+|target|规定在何处打开action URL|_blank<br>_self<br>_parent<br>_top||
+
 

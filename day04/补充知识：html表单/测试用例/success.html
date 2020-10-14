@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>登录结果</title>
+    <style></style>  <!-- 如有需要，在这里配置样式表 -->
+  </head>
+  <!-- 页面初始化的时候自动加载函数 -->
+  <body onload="queryParamsFromUrl()">   
+    <script >
+        // 这个函数说明了如何提取url里的参数
+        function queryParamsFromUrl(){
+             var url=window.location.href;
+            var re= url.replace("?","?&").split("&");
+            var params=[];
+           for(var i=1;i<re.length;i++){
+               params.push(re[i].split("=")[1]);
+           }
+           console.log(params);  //打印测试，请查看控制台
+           var info="你输入的用户名是："+params[0]+"/ 你输入的密码是："+params[1];
+           document.getElementById('demo').innerHTML=info;
+           var loginInfo=params;
+           if(loginInfo[0]=="zerotower"&&loginInfo[1]=="123456"){
+                 window.alert("登录成功");
+                //  登录成功将停留在这个页面
+             }
+             else{
+                window.alert("登录失败,关闭此弹窗将跳转到登陆示例页面");
+                 window.history.go(-1);
+             }
+         }
+     </script> <!--如有需要，这里引入Javascript的内容 -->
+   <p id="demo"></p>
+  </body>
+</html>

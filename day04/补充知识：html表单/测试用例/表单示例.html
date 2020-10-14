@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>html表单示例</title>
+    </head>
+    <body>
+      <h1>示例1：带有边框的表单</h1>
+      <form action="">
+          <fieldset>
+              <legend>login</legend>
+              Username: <input type="text"> <br>
+              Password: <input type="password"> <br>
+              <input type="submit" value="login">
+          </fieldset>
+      </form>
+      <hr>
+      <h1>示例2：模拟登录验证后跳转的场景</h1>
+      <p style="color: green;">场景模拟：输入用户名：zerotower,密码：123456
+    页面成功跳转到成功页面，否则会弹窗报错，要求重新输入</p>
+    <form action="success.html" name="loginForm">
+        Username: <input type="text" name="username" placeholder="请输入用户名：zerotower"> <br>
+        Password: <input type="password" name="password" placeholder="请输入密码"> <br>
+       <input type="submit" value="提交">
+    </form>
+    <p id="demo2"></p>
+    </body>
+    <script type="text/javascript">
+        function checkForm(){
+           var username= document.forms['loginForm']["username"].value;
+          var password=document.forms["loginForm"]["password"].value;
+          if(username=="zerotower" && password=="123456"){
+              window.alert("验证成功");
+          }
+          else{
+              alert("验证失败");
+          }
+        }
+    </script>
+</html>
