@@ -15,7 +15,7 @@ javascript的引入可以是在head、body或者js文件单独的方式，引入
 
 ## 2.js的输出
 
-js的输出.html
+>js的输出.html
 
 ## 3.js的语法
 

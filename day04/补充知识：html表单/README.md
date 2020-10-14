@@ -14,14 +14,17 @@ html 表单主要是用来收集用户的输入信息，并发送到服务端。
 
 请参考测试用例的html表单.html中的示例。
 
+
 ## 3.input标签的type属性
 
-常用的type属性有：
-1.text    #文本
-2.password  #密码
-3.radio   # 单选按钮
-4.checkbox  #复选框
-5.submit  #提交按钮
+type属性|解释
+|:-----:|:---:|
+|text|文本|
+|password|密码|
+|radio|单选按钮|
+|checkbox|复选框|
+|submit|提交按钮|
+
 
 ```mermaid
 graph TD
