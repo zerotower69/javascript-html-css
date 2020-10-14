@@ -189,3 +189,14 @@ required  // 规定输入的元素字段是必须的
 type  // 规定输入元素的类型
 ```
 
+#### 5.4.2 约束验证 CSS 伪类选择器
+
+```css
+/*介绍一些伪类选择器*/
+disabled /*选取属性为 "disabled" 属性的 input 元素*/
+invalid /*选取无效的 input 元素*/
+optional /*选择没有"required"属性的 input 元素*/
+required /*选择有"required"属性的 input 元素*/
+valid  /*选取有效值的 input 元素*/
+```
+
