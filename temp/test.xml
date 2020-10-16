@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<name nickname="Tony Bill">
+    <firstname>Tony</firstname>
+    <!-- Tony lost his middle name in a fire -->
+    <middlename/>
+    <?nameprocessor PRINT nickname?>
+    <lastname>Bill</lastname>
+</name>

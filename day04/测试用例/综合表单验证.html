@@ -1,26 +1,152 @@
 <!DOCTYPE html>
 <html lang="zh_CN">
-  <head>
-    <meta charset="UTF-8">
-    <title>综合表单验证</title>
-    <script type="text/javascript">
-    function validate() { 
-        var username=document.forms["demo1"]["username"].value;
-        if(username=null||username==""){
-             alert("用户名不能为空");
-             return false;
+
+<head>
+  <meta charset="UTF-8">
+  <title>综合表单验证</title>
+  <script type="text/javascript">
+    function validate() {
+      var username = document.forms["demo1"]["username"].value;
+      if (username = null || username == "") {
+        alert("用户名不能为空");
+        return false; //返回false将不提交
+      } else {
+        return true;
+      }
+    }
+
+    /*为了在示例3中重新使用这个函数，修改为带有id参数的函数，只要赋值给id就能任意校验不同示例的邮箱了*/
+    function validateEmail(name) {
+      var regExp = /^[\dA-Za-z]\w+@[\dA-Za-z]+[-.][A-Za-z]{2,4}$/;
+      var email = document.forms[name]["email"].value;
+      var re = regExp.test(email);
+      if (!re) {
+        alert("邮箱格式错误")
+      }
+      return re;
+    }
+  </script>
+  <!--如有需要，这里引入Javascript的内容 -->
+  <style></style> <!-- 如有需要，在这里配置样式表 -->
+</head>
+
+<body>
+  <h1>示例1:简单输入验证不为空</h1>
+  <form action="" name="demo1" onsubmit="return validate()">
+    <input type="text" name="username" placeholder="请输入用户名"> <br>
+    <input type="submit" value="提交">
+  </form>
+  <hr>
+  <h1>示例2：验证邮箱</h1>
+  <form action="" name="demo2" onsubmit="return validateEmail('demo2')">
+    你的邮箱： <input type="text" name="email" placeholder="邮箱格式:xxxx@xx.xx">
+    <input type="submit" value="提交">
+  </form>
+  <hr>
+  <h1>示例3:模拟注册的场景，需要用户名密码邮箱</h1>
+  <p>用户名要求：可以是纯英文和中文字符，不得包含其它字符，且长度大于三位小于10位</p>
+  <p>密码要求：密码长度大于8位字符但是小于16位；
+    而且密码只能是英文字符，特殊符号：_ , / ? 和数字组成，且至少一个大写字母。
+  </p>
+  <p>第二次密码要和第一次密码一致</p>
+  <p>要求邮箱地址校验，邮箱格式符合xxxx@xxx.xx的格式</p>
+  <p>模拟邮箱收到了六位验证码，任意六位数字可通过校验</p>
+  <form action="" name="demo3" onsubmit="return checkAll()">
+    <fieldset>
+      <legend>注册</legend>
+      用户名 <input type="text" name="username" placeholder="请输入用户名" required="required"> <br>
+      密码：<input type="password" size="80" name="pw1" placeholder="密码长度8-16,由至少一个大写字母和多个小写字母、数字，_ , /?组成"
+        required="required"></input> <br>
+      <!-- 密码校验测试辅助代码 -->
+      <input type="button" onclick="checkPassword('demo3')" value="密码校验(测试使用)"> <br>
+      请确认密码: <input type="password" name="pw2" placeholder="两次密码须保持一致" required="required"> <br>
+      你的邮箱: <input type="email" name="email" placeholder="邮箱格式 xxxxx@xxx.xx" required="required">
+      <input type="button" value="确认并发送验证码" name="codeOut" onclick="codeOuted('demo3')"> <br>
+      验证码 <input type="text" required="required" name="code" placeholder="请输入任意6位数字" disabled
+        onchange="controllButton('demo3')"> <br>
+      <input type="submit" value="注册" name="submit" disabled> <input type="reset" value="重置(测试使用)">
+    </fieldset>
+  </form>
+  <hr>
+</body>
+<script>
+  /*校验全部信息*/
+  function checkAll() {
+    var re= checkUsername('demo3') && checkPassword('demo3') && validateEmail('demo3');
+    if(re){
+      alert("账号注册成功！");
+    }
+    else{
+      alert("注册失败");
+    }
+    return re;
+  }
+
+  function checkUsername(name) {
+    var regExp = /^[A-Za-z\u4E00-\u9FEF]{3,10}$/;
+    var re = regExp.test(document.forms[name]['username'].value);
+    if (!re) {
+      alert("用户名格式错误,重新输入!");
+    }
+    return re;
+  }
+
+  function checkPassword(name) {
+    //密码校验的思路不应该使用test,而应该是检查字段是否存在
+    var pw1 = document.forms[name]["pw1"].value;
+    var pw2 = document.forms[name]["pw2"].value;
+    if (pw1.match(/[^\u4E00-\u9FEF]/) && pw1.match(/[a-z0-9]/) && pw1.match(/[A-Z]/) && pw1.length >= 8 && pw1.length <=
+      16) {
+      if (pw1 == pw2) {
+        return true;
+      } else {
+        alert("密码不一致");
+        return false;
+      }
+    } else {
+      alert("密码格式错误");
+      return false;
+    }
+  }
+
+  var COUNT = 60;
+  var count = 0;
+  var timer = null;
+
+  function codeOuted(name) {
+    //放行验证码输入
+    document.forms[name]["code"].disabled = false;
+    count = 0;
+    if (validateEmail('demo3')) {
+      timer = setInterval(function () {
+        var elem = document.forms["demo3"]["codeOut"];
+        if (count < COUNT && count >= 0) {
+          count++;
+        } else {
+          count = -1;
+          clearInterval(timer); //你可以注释这行代码，并把COUNT改成小一些，比如10再观察效果
         }
-        else{
-            return true;
+        if (count == -1) {
+          elem.value = "确认并发送验证码";
+          elem.disabled = false;
+        } else {
+          elem.value = (COUNT - count) + "s后重新发送";
+          elem.disabled = true;
         }
-     }
-    </script> <!--如有需要，这里引入Javascript的内容 -->
-    <style></style>  <!-- 如有需要，在这里配置样式表 -->
-  </head>
-  <body>
-      <form action="" name="demo1" onsubmit="return validate()">
-        <input type="text" name="username" placeholder="请输入用户名"> <br>
-        <input type="submit" value="提交">
-    </form>
-  </body>
+      }, 1000)
+    }
+  }
+
+  function controllButton(name) {
+    var elem = document.forms[name]['submit'];
+    var code = document.forms[name]['code'].value;
+    console.log(code.length, code)
+    if (/^(\d{6})$/.test(code)) {
+      elem.disabled = false;
+    } else {
+      elem.disabled = true;
+    }
+  }
+</script>
+
 </html>

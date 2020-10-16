@@ -95,7 +95,6 @@ var str="kill one person";
 var re=reg.test(str);  //false
 ```
 
-
 ### 1.5 常用的正则表达式场景
 
 此部分的内容请参考：正则校验.html
