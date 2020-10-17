@@ -126,6 +126,8 @@ graph TB;
 A & B-->C & D;
 ```
 
+You can use `subgraph`
+
 ```mermaid
 flowchart TB
     c1-->a2
@@ -142,8 +144,3 @@ flowchart TB
     three --> two
     two --> c2
 ```
-
-<div class="mermaid">
-graph TD;
-A-->B;
-</div>
