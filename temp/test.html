@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>我是标题</title>
+    <script src="../lib/axios.js"></script> <!--如有需要，这里引入Javascript的内容 -->
+    <style></style>  <!-- 如有需要，在这里配置样式表 -->
+  </head>
+  <body onload="">
+   <button>测试</button>
+  </body>
+  <script>
+      window.onload=function(){
+          var url="test.json";
+          var request=new XMLHttpRequest();
+          request.open("get",url);
+          request.send(null);
+          request.onload=function(){
+              if(request.status==200){
+                  var json=JSON.parse(request.responseText);
+                  console.log(json);
+              }
+          }
+         // axios.defaults.baseURL=
+      }
+  </script>
+</html>

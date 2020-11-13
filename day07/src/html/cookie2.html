@@ -1,0 +1,32 @@
+<!--
+ * @Description: 
+ * @Author: ZeroTower
+ * @Github: https://github.com/zerotower69
+ * @Date: 2020-10-23 22:01:29
+ * @LastEditors: ZeroTower
+ * @LastEditTime: 2020-10-23 22:08:51
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10">
+    <title>读取cookie</title>
+</head>
+
+<body>
+
+</body>
+
+<script language="javascript" type="text/javascript">
+    var cookieMessage = document.cookie;
+    if (cookieMessage == "") {
+        document.write("没有获得cookie值，请检查！");
+    } else {
+        document.write("cookie文件的内容为:<br>", cookieMessage);
+    }
+</script>
+
+</html>

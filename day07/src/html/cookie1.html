@@ -1,0 +1,42 @@
+<!--
+ * @Description: 
+ * @Author: ZeroTower
+ * @Github: https://github.com/zerotower69
+ * @Date: 2020-10-22 23:24:38
+ * @LastEditors: ZeroTower
+ * @LastEditTime: 2020-10-23 19:50:09
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>简单的cookie创建和存储</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+    <script language="javascript" type="text/javascript">
+        // 设置cookie
+        function setCookie() {
+            let userName = myForm.myName.value;
+            let userPassword = myForm.myPassword.value;
+
+            document.cookie = "cookieUserName=" + userName;
+            document.cookie = "cookiePassword=" + userPassword;
+            alert("设置完毕");
+        }
+        //读取cookie
+        function getCookie() {
+            let cookieMessage = document.cookie;
+            alert(cookieMessage);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="myForm">
+        姓名：<input type="text" name="myName"> <br> 密码：
+        <input type="password" name="myPassword"> <br>
+        <input type="button" value="设置Cookie" onclick="setCookie()">
+        <input type="button" value="读取Cookie" onclick="getCookie()">
+    </form>
+</body>
+
+</html>
